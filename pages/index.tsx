@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Head from "next/head"
-import {Footer} from "../components/Footer"
+import { Footer } from "../components/Footer"
 import { Geist, Geist_Mono } from "next/font/google";
 import { Links } from "@/components/Links";
-
+import { Headline } from "../components/Headline";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,9 +24,8 @@ export default function Home() {
           index
         </title>
       </Head>
+      <Headline title="Index Page" page="index"/>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-              <h1>index page</h1>
-
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -47,7 +46,7 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
         </ol>
-      <Links />
+        <Links />
       </main>
       <Footer />
     </div>
