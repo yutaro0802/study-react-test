@@ -1,9 +1,17 @@
-
+import Image from "next/image";
+import { Links } from "./Links";
 
 export function MainPage() {
-  const pagename = "about"
   return (
-    <div>
+    <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+      <Image
+        className="dark:invert"
+        src="/next.svg"
+        alt="Next.js logo"
+        width={180}
+        height={38}
+        priority
+      />
       <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
         <li className="mb-2 tracking-[-.01em]">
           Get started by editing{" "}
@@ -16,10 +24,7 @@ export function MainPage() {
           Save and see your changes instantly.
         </li>
       </ol>
-    </div>
+      <Links />
+    </main>
   );
 }
-
-
-
-
