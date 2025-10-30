@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "../components/Footer"
 import { Headline } from "../components/Headline"
 import { MainPage } from "@/components/MainPage";
+import { Header } from "@/components/Header";
 
 
 const geistSans = Geist({
@@ -25,8 +26,9 @@ export default function Home() {
           index
         </title>
       </Head>
+      <Header />
       <Headline  title="About Page" page="about"/>
-      <MainPage />
+      <MainPage page="about"/>
       <Footer />
     </div>
   );

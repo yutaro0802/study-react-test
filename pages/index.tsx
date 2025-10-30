@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Head from "next/head"
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "../components/Footer"
-import { Links } from "@/components/Links";
+import { Header } from "@/components/Header";
 import { Headline } from "../components/Headline";
 import { MainPage } from "../components/MainPage";
 const geistSans = Geist({
@@ -10,10 +9,12 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 
 export default function Home() {
   return (
@@ -25,8 +26,9 @@ export default function Home() {
           index
         </title>
       </Head>
+      <Header />
       <Headline title="Index Page" page="index"/>
-      <MainPage />
+      <MainPage page="index"/>
       <Footer />
     </div>
   );
