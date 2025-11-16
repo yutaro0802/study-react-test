@@ -1,13 +1,17 @@
-import Head from "next/head"
+import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Footer } from "../components/Footer"
-import { Header } from "@/components/Header";
-import { Headline } from "../components/Headline";
-import { MainPage } from "../components/MainPage";
+import { Header } from "@/src/components/Header";
+import { Headline } from "src/components/Headline";
+import { MainPage } from "src/components/MainPage";
+import { Footer } from "@/src/components/Footer";
+
+// import { Footer } from "src/components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+
 
 
 const geistMono = Geist_Mono({
@@ -15,20 +19,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 export default function Home() {
   return (
     <div
       className={`${geistSans.className} ${geistMono.className} font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}
     >
       <Head>
-        <title>
-          index
-        </title>
+        <title>index</title>
       </Head>
       <Header />
-      <Headline title="Index Page" page="index"/>
-      <MainPage page="index"/>
+      <Headline title="Index Page" page="index" />
+      <MainPage page="index" />
       <Footer />
     </div>
   );
