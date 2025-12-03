@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer"
 import { Header } from "../components/Header";
 import { Headline } from "../components/Headline";
 import { MainPage } from "../components/MainPage";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,6 +25,7 @@ export default function Home() {
           e.preventDefault();
           alert(foo)
         }, []);
+
   return (
     <div
       className={`${geistSans.className} ${geistMono.className} font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}

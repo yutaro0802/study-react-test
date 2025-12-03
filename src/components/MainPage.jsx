@@ -1,9 +1,22 @@
 import Image from "next/image";
 import { Links } from "./Links";
+import { useEffect } from "react";
 
 
 
 export function MainPage(props) {
+
+  useEffect(() => {
+      console.log("マウント時")
+      document.body.style.backgroundColor = "lightblue"
+  
+      return () => {
+        console.log("アンマウント時")
+        document.body.style.backgroundColor = ""
+  
+      }
+    }, [])
+
   return (
     <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
       <Image
