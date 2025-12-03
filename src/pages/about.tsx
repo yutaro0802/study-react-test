@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { Footer } from "../components/Footer"
-import { Header } from "@/components/Header";
+import { Header } from "../components/Header";
 import { Headline } from "../components/Headline";
 import { MainPage } from "../components/MainPage";
 import { useCallback } from "react";
