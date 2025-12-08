@@ -32,7 +32,7 @@ export default function Home() {
       <Head>
         <title>about</title>
       </Head>
-      <a href="/about" onClick={handleClick}>ぼたん</a>
+      <butto href="/about" onClick={handleClick}>ぼたん</butto>
       <Header />
       <Headline title="About Page" page="about" />
       <MainPage page="about" />
