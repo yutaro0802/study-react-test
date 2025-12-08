@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 export default function Home() {
   const [foo, setFoo] = useState(1);
 
-  const handleClick = (e) => {
-    setFoo(foo => foo + 1);
-    setFoo(foo => foo + 1);
+  const handleClick = () => {
+    setFoo((foo) => foo + 1);
+    setFoo((foo) => foo + 1);
   };
 
   useEffect(() => {
