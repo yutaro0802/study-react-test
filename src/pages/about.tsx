@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer"
 import { Header } from "../components/Header";
 import { Headline } from "../components/Headline";
 import { MainPage } from "../components/MainPage";
-import { useCallback } from "react";
+import { useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +18,12 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
-  const foo = 1
+ const [foo, setFoo] = useState(1);
+
+  const handleClick = () => {
+    setFoo((foo) => foo + 1);
+    setFoo((foo) => foo + 1);
+  };
 
   // const handleClick = useCallback((e) => {
   //         console.log(e.target.href);
@@ -32,6 +37,7 @@ export default function Home() {
       <Head>
         <title>about</title>
       </Head>
+      <h1>{foo}</h1>
       <button onClick={handleClick}>ぼたん</button>
       <Header />
       <Headline title="About Page" page="about" />
