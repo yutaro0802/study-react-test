@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Headline } from "../components/Headline";
 import { MainPage } from "../components/MainPage";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -16,19 +16,21 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
-  const [foo, setFoo] = useState(1);
+  const [count, setCount] = useState(1);
 
-  const handleClick = () => {
-    setFoo((foo) => foo + 1);
-    setFoo((foo) => foo + 1);
-  };
+  const handleClick = useCallback((e) => {
+    if (count < 10) {
+      setCount((count) => count + 1);
+    }
+  }, []);
 
   useEffect(() => {
-    console.log("マウント時");
+    // console.log("foo")
+    console.log(`マウント時: ${count}`);
     document.body.style.backgroundColor = "lightblue";
 
     return () => {
-      console.log("アンマウント時");
+      console.log(`アンマウント時: ${count}`);
       document.body.style.backgroundColor = "";
     };
   }, []);
@@ -40,7 +42,7 @@ export default function Home() {
       <Head>
         <title>index</title>
       </Head>
-      <h1>{foo}</h1>
+      <h1>{count}</h1>
       <button onClick={handleClick}>ぼたん</button>
       <Header />
       <Headline title="Index Page" page="index" />
