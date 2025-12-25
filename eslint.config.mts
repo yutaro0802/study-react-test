@@ -46,6 +46,9 @@ export default defineConfig([
         "warn",
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }
       ],
+
+      "react-hooks/preserve-manual-memoization": "off",
+
       // Next が生成する triple-slash を怒られないようにするなら off でもOK
       // "@typescript-eslint/triple-slash-reference": "off",
     },
