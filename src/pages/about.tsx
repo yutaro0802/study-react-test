@@ -21,7 +21,7 @@ export default function Home() {
   const [count, setCount] = useState(1);
   const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(true);
-  const [array, setArray] = useState([]);
+  const [array, setArray] = useState<string[]>([]);
 
   const handleClick = useCallback(() => {
     if (count < 10) {
