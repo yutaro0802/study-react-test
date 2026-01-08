@@ -4,11 +4,6 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Headline } from "../components/Headline";
 import { MainPage } from "../components/MainPage";
-import { useCallback, useEffect, useState } from "react";
-import { useCounter } from "@/src/hooks/useCounter";
-import { useInputArray } from "@/src/hooks/useInputArray";
-import { useBgLightBlue } from "@/src/hooks/useBgLightBlue";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,10 +14,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function Home() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const { text, array, handleChange, handleAdd } = useInputArray();
-  useBgLightBlue();
+export default function Home(props) {
+  const {
+    count,
+    isShow,
+    handleClick,
+    handleDisplay,
+    text,
+    array,
+    handleChange,
+    handleAdd,
+  } = props
 
   return (
     <div
@@ -38,7 +40,7 @@ export default function Home() {
       <input type="text" value={text} onChange={handleChange} />
       <button onClick={handleAdd}>追加</button>
       <ul>
-        {array.map((item) => {
+        {array.map((item: string) => {
           return <li key={item}>{item}</li>;
         })}
       </ul>

@@ -5,10 +5,6 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Headline } from "../components/Headline";
 import { MainPage } from "../components/MainPage";
-import { useCounter } from "@/src/hooks/useCounter";
-import { useInputArray } from "@/src/hooks/useInputArray";
-import { useBgLightBlue } from "@/src/hooks/useBgLightBlue";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,13 +16,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-
-export default function About() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const { text, array, handleChange, handleAdd } = useInputArray();
-  useBgLightBlue();
-
+export default function About({
+  count,
+  isShow,
+  handleClick,
+  handleDisplay,
+  text,
+  array,
+  handleChange,
+  handleAdd,
+}: {
+  count: number;
+  isShow: boolean;
+  handleClick: () => void;
+  handleDisplay: () => void;
+  text: string;
+  array: string[];
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleAdd: () => void;
+}) {
   return (
     <div
       className={`${geistSans.className} ${geistMono.className} font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}
