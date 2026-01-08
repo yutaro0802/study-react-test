@@ -1,10 +1,10 @@
 import Head from "next/head";
+import type React from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Headline } from "../components/Headline";
 import { MainPage } from "../components/MainPage";
-import { Links } from "@/src/components/Links";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,7 +15,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function Home(props) {
+type HomeProps = {
+  count: number;
+  isShow: boolean;
+  handleClick: () => void;
+  handleDisplay: () => void;
+  text: string;
+  array: string[];
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleAdd: () => void;
+};
+
+export default function Home(props: HomeProps) {
   const {
     count,
     isShow,
@@ -25,7 +36,7 @@ export default function Home(props) {
     array,
     handleChange,
     handleAdd,
-  } = props
+  } = props;
 
   return (
     <div
