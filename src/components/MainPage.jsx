@@ -46,7 +46,7 @@ const ITEMS = [
   },
 ];
 
-export const MainPage = (props) => {
+export const MainPage = () => {
   const [items, setItems] = useState(ITEMS);
   const handleReduce = useCallback(() => {
     setItems((prevItems) => {
@@ -68,8 +68,7 @@ export const MainPage = (props) => {
         <li className="mb-2 tracking-[-.01em]">
           アイテムの数は{items.length}個です
           <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded"></code>
-          <button onClick={handleReduce}>減らす</button>import Image from "next/image";
-          
+          <button onClick={handleReduce}>減らす</button>
         </li>
         <li className="tracking-[-.01em]">
           Save and see your changes instantly.
