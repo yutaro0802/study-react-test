@@ -46,7 +46,7 @@ const ITEMS = [
   },
 ];
 
-export const MainPage = () => {
+export const MainPage = (props) => {
   const [items, setItems] = useState(ITEMS);
   const handleReduce = useCallback(() => {
     setItems((prevItems) => {

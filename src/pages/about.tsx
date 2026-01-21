@@ -49,7 +49,7 @@ const About =(props: aboutProps) => {
       </ul>
       <Header />
       <Headline title="About Page" page="about" />
-      <MainPage page="about" />
+      <MainPage/>
       <Footer />
     </div>
   );
