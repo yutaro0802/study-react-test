@@ -7,7 +7,7 @@ export const useBgColor = () => {
   console.log(router);
 
   const bgColor = useMemo(() => {
-    return router.pathname === "/" ? "lightblue" : "beige";
+    return router.pathname === "/" ? "lightblue" : "black";
   }, [ router.pathname])
 
   useEffect(() => {

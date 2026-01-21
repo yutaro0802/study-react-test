@@ -46,7 +46,7 @@ const ITEMS = [
   },
 ];
 
-export function MainPage(props) {
+export const MainPage = (props) => {
   const [items, setItems] = useState(ITEMS);
   const handleReduce = useCallback(() => {
     setItems((prevItems) => {
@@ -68,7 +68,35 @@ export function MainPage(props) {
         <li className="mb-2 tracking-[-.01em]">
           アイテムの数は{items.length}個です
           <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded"></code>
-          <button onClick={handleReduce}>減らす</button>.
+          <button onClick={handleReduce}>減らす</button>.import Image from "next/image";
+          
+          export const Links = (props) => {
+            return (
+              <div className="flex gap-4 items-center flex-col sm:flex-row">
+                {props.items.map((item, index) => {
+                  return (
+                    <a
+                      key={index}
+                      className={item.className}
+                      href={item.href}
+                      // target="_blank"
+                      // rel="noopener noreferrer"
+                    >
+                      <Image
+                        className={item.imgClassName}
+                        src={item.src}
+                        alt={item.alt}
+                        width={item.width}
+                        height={item.height}
+                      />
+                      {item.description}
+                    </a>
+                  );
+                })}
+              </div>
+            );
+          }
+          
         </li>
         <li className="tracking-[-.01em]">
           Save and see your changes instantly.
@@ -77,4 +105,4 @@ export function MainPage(props) {
       <Links items={items} handleReduce={handleReduce} />
     </main>
   );
-}
+};

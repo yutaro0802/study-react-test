@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export function Links({ items, }) {
+export const Links = (props) => {
   return (
     <div className="flex gap-4 items-center flex-col sm:flex-row">
-      {items.map((item, index) => {
+      {props.items.map((item, index) => {
         return (
           <a
             key={index}
